@@ -1,0 +1,79 @@
+add_namespace = eob
+
+country_event = {
+	id = eob.1
+	title = eob.1.t
+	desc = eob.1.d
+	#picture = GFX_event_afg_election
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = BRA
+        has_country_flag = EOB
+		or = {
+            has_government = neutrality
+            has_government = fascism
+        }
+		date > 1921.11.14
+	}
+
+	option = {
+	name = "Ok"
+					create_country_leader = {
+						name = "Pedro de Alcantara"
+						desc = " "
+						picture = "gfx/leaders/EoB/Portrait_EoB_Pedru.dds"
+						expire = "1940.1.29"
+						ideology = despotism
+						traits = {}	
+					}
+					create_country_leader = {
+						name = "Pedro de Alcantara"
+						desc = " "
+						picture = "gfx/leaders/EoB/Portrait_EoB_Pedru.dds"
+						expire = "1940.1.29"
+						ideology = rexism
+						traits = {}	
+					}
+    }
+}
+
+country_event = {
+	id = eob.2
+	title = eob.2.t
+	desc = eob.2.d
+	#picture = GFX_event_afg_election
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = BRA
+        has_country_flag = EOB
+		or = {
+            has_government = neutrality
+            has_government = fascism
+        }
+		date > 1940.1.29
+	}
+
+	option = {
+	name = "Ok"
+				create_country_leader = {
+						name = "Pedro Gastan"
+						desc = " "
+						picture = "gfx/leaders/EoB/Portrait_EoB_Gastan.dds"
+						expire = "1969.1.1"
+						ideology = despotism
+						traits = {}	
+					}
+				create_country_leader = {
+						name = "Pedro Gastan"
+						desc = " "
+						picture = "gfx/leaders/EoB/Portrait_EoB_Gastan.dds"
+						expire = "1969.1.1"
+						ideology = rexism
+						traits = {}	
+				}
+    }
+}

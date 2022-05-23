@@ -1,0 +1,118 @@
+empire_of_brazil = {
+
+	empire_of_brazil = {
+	
+		icon = GFX_decision_generic_form_nation
+
+		cost = 100
+
+	
+		allowed = {
+			or = {
+				has_government = fascism
+				has_government = neutrality
+			}
+			not = { 
+				or = {
+					has_country_flag = EOB 
+					is_ai = yes
+				}
+			}
+		}
+	
+		visible = {
+				
+			}
+			
+		complete_effect = {
+
+			set_party_name = { 
+    			ideology = neutrality 
+    			long_name = "House of Orleans-Braganza"
+    			name = "House of Orleans-Braganza"
+			}
+			set_party_name = { 
+    			ideology = fascism
+    			long_name = "House of Orleans-Braganza"
+    			name = "House of Orleans-Braganza"
+			}
+
+			if = {
+				limit = { has_government = fascism }
+				set_politics = {
+					ruling_party = fascism
+					elections_allowed = no
+				}
+			}
+			else = {
+				set_politics = {
+					ruling_party = neutrality
+					elections_allowed = no
+				}
+			}
+
+			set_cosmetic_tag = EOB_empire_brazil
+			set_country_flag = EOB
+
+			if = {
+				limit = { date < 1921.11.14 }
+
+					create_country_leader = {
+						name = "Isabella Braganza"
+						desc = " "
+						picture = "gfx/leaders/EoB/Portrait_EoB_Isabella.dds"
+						expire = "1921.11.14"
+						ideology = despotism
+						traits = {}	
+					}
+					create_country_leader = {
+						name = "Isabella Braganza"
+						desc = " "
+						picture = "gfx/leaders/EoB/Portrait_EoB_Isabella.dds"
+						expire = "1921.11.14"
+						ideology = rexism
+						traits = {}	
+					}
+
+			}
+			else_if = {
+				limit = { date < 1940.1.29 }
+
+					create_country_leader = {
+						name = "Pedro de Alcantara"
+						desc = " "
+						picture = "gfx/leaders/EoB/Portrait_EoB_Pedru.dds"
+						expire = "1940.1.29"
+						ideology = despotism
+						traits = {}	
+					}
+					create_country_leader = {
+						name = "Pedro de Alcantara"
+						desc = " "
+						picture = "gfx/leaders/EoB/Portrait_EoB_Pedru.dds"
+						expire = "1940.1.29"
+						ideology = rexism
+						traits = {}	
+					}
+			}
+			else = {
+				create_country_leader = {
+						name = "Pedro Gastan"
+						desc = " "
+						picture = "gfx/leaders/EoB/Portrait_EoB_Gastan.dds"
+						expire = "1969.1.1"
+						ideology = despotism
+						traits = {}	
+					}
+				create_country_leader = {
+						name = "Pedro Gastan"
+						desc = " "
+						picture = "gfx/leaders/EoB/Portrait_EoB_Gastan.dds"
+						expire = "1969.1.1"
+						ideology = rexism
+						traits = {}	
+				}
+			}
+		}	
+	}
+}
